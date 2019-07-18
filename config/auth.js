@@ -1,4 +1,5 @@
 module.exports = {
+    // Prevents users from access pages that require user authentication
     ensureAuthenticated: function (req, res, next) {
         if (req.isAuthenticated()) {
             return next();
