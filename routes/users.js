@@ -80,9 +80,11 @@ router.post("/register", (req, res) => {
                             newUser.password = hash
 
                             // Save user to collection
+                            console.log(newUser)
                             newUser.save()
                                 // If user is saved, we want to redirect to login page with success message
                                 .then(user => {
+                                    console.log("YOU ARE GOOD")
                                     req.flash("success_msg", "You are no registered and can now log in")
                                     res.redirect('login')
                                 })
@@ -97,7 +99,6 @@ router.post("/register", (req, res) => {
 
 // Login Handle
 router.post("/login", (req, res, next) => {
-    console.log("PASSPORT AUTHENTICATION IN USERS.JS")
     passport.authenticate("local", {
         successRedirect: "/home",
         failureRedirect: "/users/login",

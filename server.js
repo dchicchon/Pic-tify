@@ -9,9 +9,9 @@ require("./config/passport")(passport)
 
 var app = express();
 
-var db = require("./config/keys").MongoURI;
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/pictify"
 
-mongoose.connect(db, { useNewUrlParser: true })
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
     .then(() => console.log("MongoDB Connected..."))
     .catch(err => console.log(err))
 
@@ -49,7 +49,7 @@ app.use("/users", require("./routes/users"));
 app.use("/test", require("./routes/test"))
 
 // This is our port number depending on if we are using a third party service like heroku or our own localhost
-var PORT = process.env.PORT || 8000;
+var PORT = process.env.PORT || 4815;
 
 // Have the server start!
 app.listen(PORT, console.log(`Server started on port ${PORT}`))

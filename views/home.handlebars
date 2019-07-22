@@ -1,7 +1,22 @@
 {{!-- <nav class = 'navbar navbar-expand-md navbar-primary'>
     <a href="/home" class="navbar-brand">Welcome {{firstname}} {{lastname}}</a>
 </nav> --}}
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">{{firstname}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#">Saved Photos</a>
+        </div>
+    </div>
+    <a class = 'btn' href="/users/logout">Logout</a>
+</nav>
 <div class="container">
-    <h2 class= 'd-flex justify-content-center'>Welcome to Pic-tify</h2>
+    <h2 class='d-flex justify-content-center'>Welcome to Pic-tify</h2>
+    {{!-- Logo --}}
+    {{!-- <img src="../assets/images/weirdDog.png" alt="weird dog" width = '800px'> --}}
+
 </div>
