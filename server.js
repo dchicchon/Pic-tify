@@ -46,6 +46,7 @@ app.use(express.static("public"))
 // Routes
 app.use("/", require("./routes/index"));
 app.use("/users", require("./routes/users"));
+app.use("/home", require("./routes/home"))
 app.use("/test", require("./routes/test"))
 
 // This is our port number depending on if we are using a third party service like heroku or our own localhost

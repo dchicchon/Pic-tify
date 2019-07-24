@@ -1,6 +1,4 @@
-{{!-- <nav class = 'navbar navbar-expand-md navbar-primary'>
-    <a href="/home" class="navbar-brand">Welcome {{firstname}} {{lastname}}</a>
-</nav> --}}
+{{!-- Nav bar --}}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">{{firstname}}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -12,11 +10,32 @@
             <a class="nav-item nav-link" href="#">Saved Photos</a>
         </div>
     </div>
-    <a class = 'btn' href="/users/logout">Logout</a>
+    <a class='btn' href="/users/logout">Logout</a>
 </nav>
-<div class="container">
-    <h2 class='d-flex justify-content-center'>Welcome to Pic-tify</h2>
-    {{!-- Logo --}}
-    {{!-- <img src="../assets/images/weirdDog.png" alt="weird dog" width = '800px'> --}}
+
+{{!-- Search bar container --}}
+<div class="container d-flex justify-content-center">
+
+    <form class='mt-5 w-25' id='search-holder'>
+
+        <label for="search">Search</label>
+        <div class="input-group">
+            <div class="input-group-append">
+                <input type="text" id = 'search' name = 'search' class='form-control' placeholder="Enter a website here..." required>
+                
+                <button id = 'submit-site' type='submit' class='btn btn-primary'>Search</button>
+            </div>
+        </div>
+
+    </form>
 
 </div>
+
+{{!-- Search Results --}}
+<h3 id ='user-search'></h3>
+<div class="container mt-5">
+    <div class="" id ='search-results'>
+    </div>
+</div>
+
+<script src = './assets/javascript/populateSearch.js'></script>

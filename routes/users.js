@@ -33,7 +33,7 @@ router.post("/register", (req, res) => {
 
     if (password.length < 6) {
         console.log("Password should be at least 6 characters")
-        errors.push({ msg: "Password should be at least 6 characters"})
+        errors.push({ msg: "Password should be at least 6 characters" })
     }
 
     if (errors.length > 0) {
@@ -99,12 +99,14 @@ router.post("/register", (req, res) => {
 
 // Login Handle
 router.post("/login", (req, res, next) => {
+    console.log("\nTHIS IS THE LOGIN REQUEST BODY")
+    console.log(req.body)
     passport.authenticate("local", {
         successRedirect: "/home",
         failureRedirect: "/users/login",
         failureFlash: true
     })(req, res, next)
-    
+
 })
 
 router.get("/logout", (req, res) => {

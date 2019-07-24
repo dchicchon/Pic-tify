@@ -1,0 +1,9 @@
+<h1>Hello {{first_name}}</h1>
+{{#if savedImage}}
+    {{#each savedImage}}
+    <div class="card">
+        <img src={{this.image}}>
+    </div
+    {{/each}}
+
+{{/if}}

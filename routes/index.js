@@ -5,7 +5,7 @@ const { ensureAuthenticated } = require('../config/auth');
 router.get("/", (req, res) => res.render("index", { title: "Welcome to Pic-tify" }));
 
 router.get("/home", ensureAuthenticated, (req, res) => {
-    console.log("WE MADE IT TO THE INDEX ROUTE")
+    console.log("\nWE MADE IT TO THE INDEX ROUTE")
     console.log(req.user)
     // The second parameter of res.render is going to be the data we send to that page!
     res.render("home", { 

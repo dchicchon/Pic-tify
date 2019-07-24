@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
-const UserSchema = new mongoose.Schema({
+const UserSchema = new Schema({
     first_name: {
         type: String,
         required: true
@@ -20,7 +21,15 @@ const UserSchema = new mongoose.Schema({
     date: {
         type: Date,
         default: Date.now
-    }
+    },
+    notes: {
+        type: String,
+        required: false
+    },
+    savedImage: [{
+        type: Schema.Types.ObjectId,
+        ref: "Image"
+    }]
 });
 
 const User = mongoose.model('User', UserSchema);
